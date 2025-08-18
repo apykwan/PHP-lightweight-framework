@@ -1,0 +1,17 @@
+{
+    "name": "framework/mvc",
+    "autoload": {
+        "psr-4": {
+            "Framework\\": "src/",
+            "App\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "apk"
+        }
+    ],
+    "require": {
+        "symfony/var-dumper": "^7.3"
+    }
+}
