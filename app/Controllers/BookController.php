@@ -19,6 +19,6 @@ class BookController extends AbstractController
 
   public function store(): Response
   {
-    dd('here');
+    dd($this->request);
   }
 }

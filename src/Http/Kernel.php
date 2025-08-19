@@ -1,12 +1,22 @@
 <?php
 
 namespace Framework\Http;
-use Framework\Http\{Request, Response};
+
 use FastRoute\{RouteCollector, Dispatcher};
 use function FastRoute\simpleDispatcher;
 
+use Framework\Controllers\AbstractController;
+use Framework\Database\Connection;
+
 class Kernel
 {
+  protected ?Connection $connection = null;
+  public function __construct()
+  {
+    $config = include BASE_PATH . '/database/config.php';
+    $this->connection = Connection::create($config['connectionString']);
+  }
+
   public function handle(Request $request): Response
   {
     $dispatcher = simpleDispatcher(function (RouteCollector $routeController) {
@@ -36,7 +46,12 @@ class Kernel
     [$status, $handler, $vars] = $routeInfo;
 
     [$controller, $method] = $handler;
+    $controller = new $controller;
 
-    return call_user_func_array([new $controller, $method], $vars);
+    if ($controller instanceof AbstractController) {
+      $controller->setRequest($request);
+    }
+
+    return call_user_func_array([$controller, $method], $vars);
   }
 }

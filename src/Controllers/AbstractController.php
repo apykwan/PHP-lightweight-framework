@@ -2,6 +2,7 @@
 
 namespace Framework\Controllers;
 
+use Framework\Http\Request;
 use Twig\Loader\FilesystemLoader;
 use Twig\Environment;
 
@@ -9,6 +10,7 @@ use Framework\Http\Response;
 
 abstract class AbstractController
 {
+  protected ?Request $request = null;
   public function render(string $template, ?array $vars = []): Response
   {
     $templatePath = BASE_PATH . '/views';
@@ -18,5 +20,10 @@ abstract class AbstractController
     $content = $twig->render($template, $vars);
 
     return new Response($content);
+  }
+
+  public function setRequest(Request $request): void
+  {
+    $this->request = $request;
   }
 }
