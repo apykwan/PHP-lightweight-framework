@@ -17,7 +17,7 @@ class Request
 
   public static function create(): static
   {
-    if (null == static::$instance) {
+    if (static::$instance === null) {
       static::$instance = new static(
         $_SERVER,
         $_GET,
@@ -29,5 +29,15 @@ class Request
     }
 
     return static::$instance;
+  }
+
+  public function getMethod(): string
+  {
+    return $this->server['REQUEST_METHOD'];
+  }
+
+  public function getUri(): string
+  {
+    return $this->server['REQUEST_URI'];
   }
 }

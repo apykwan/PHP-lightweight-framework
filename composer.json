@@ -2,16 +2,17 @@
     "name": "framework/mvc",
     "autoload": {
         "psr-4": {
-            "Framework\\": "src/",
-            "App\\": "app/"
+            "Framework\\": "framework/src/",
+            "App\\": "framework/app/"
         }
     },
     "authors": [
         {
-            "name": "apk"
+            "name": "apkwan"
         }
     ],
     "require": {
-        "symfony/var-dumper": "^7.3"
+        "symfony/var-dumper": "^7.3",
+        "nikic/fast-route": "^1.3"
     }
 }

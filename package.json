@@ -1,0 +1,23 @@
+{
+  "name": "mvc",
+  "version": "1.0.0",
+  "description": "A lightweight, custom PHP MVC framework designed to help you understand the basics of routing, controllers, models, views, and dependency management. Perfect for learning modern PHP architecture without the overhead of full frameworks like Laravel or Symfony.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --watch framework --ext php --exec \"php -S localhost:8000 -t framework/public\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apykwan/PHP-lightweight-framework.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/apykwan/PHP-lightweight-framework/issues"
+  },
+  "homepage": "https://github.com/apykwan/PHP-lightweight-framework#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
