@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <title>Light Weight Framework</title>
+</head>
+<body>
+    <div class="h-screen w-screen flex justify-center items-center bg-slate-200">
+      <form 
+        action="/books" 
+        method="POST" 
+        class="flex flex-col p-10 gap-5 bg-zinc-200 w-[500px] rounded-md shadow-lg"
+      >
+        <input class="bg-zinc-300 p-4 focus:ring-pink-700 focus:ring-2 
+          outline-none rounded-md" type="text" name="title">
+        <textarea rows="7" class="resize-none rounded-md p-4 bg-zinc-300 focus:ring-pink-700 focus:ring-2 
+          outline-none" name="body"></textarea>
+        <button class="bg-pink-700 w-[40%] rounded-md mx-auto cursor-pointer p-4 text-white" type="submit">Create</button>
+      </form>
+    </div>
+</body>
+</html>

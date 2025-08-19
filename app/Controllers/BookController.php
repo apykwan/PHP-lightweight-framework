@@ -2,13 +2,23 @@
 
 namespace App\Controllers;
 
-use Framework\Http\{Request, Response};
+use Framework\Controllers\AbstractController;
+use Framework\Http\Response;
 
-class BookController
+class BookController extends AbstractController
 {
   public function show($id): Response
   {
-    $content = "<h1>Book {$id}</h1>";
-    return new Response($content);
+    return $this->render('book.html.twig', ['id' => $id]);
+  }
+
+  public function create(): Response
+  {
+    return $this->render('create-book.html.twig');
+  }
+
+  public function store(): Response
+  {
+    dd('here');
   }
 }

@@ -2,13 +2,13 @@
 
 namespace App\Controllers;
 
-use Framework\Http\{Request, Response};
+use Framework\Controllers\AbstractController;
+use Framework\Http\Response;
 
-class HomeController
+class HomeController extends AbstractController
 {
   public function index(): Response
   {
-    $content = "<h1>HELLO WORLD</h1>";
-    return new Response($content);
+    return $this->render('home.html.twig');
   }
 }
