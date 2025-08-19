@@ -10,7 +10,7 @@ class Kernel
   public function handle(Request $request): Response
   {
     $dispatcher = simpleDispatcher(function (RouteCollector $routeController) {
-      $routes = include BASE_PATH . '/framework/routes/web.php';
+      $routes = include BASE_PATH . '/routes/web.php';
 
       foreach($routes as $route) {
         $routeController->addRoute(...$route);

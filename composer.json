@@ -2,8 +2,8 @@
     "name": "framework/mvc",
     "autoload": {
         "psr-4": {
-            "Framework\\": "framework/src/",
-            "App\\": "framework/app/"
+            "Framework\\": "src/",
+            "App\\": "app/"
         }
     },
     "authors": [

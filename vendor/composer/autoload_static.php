@@ -41,7 +41,7 @@ class ComposerStaticInitb0a9c38b22d4037b10847253abf634fe
         ),
         'Framework\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/framework/src',
+            0 => __DIR__ . '/../..' . '/src',
         ),
         'FastRoute\\' => 
         array (
@@ -49,7 +49,7 @@ class ComposerStaticInitb0a9c38b22d4037b10847253abf634fe
         ),
         'App\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/framework/app',
+            0 => __DIR__ . '/../..' . '/app',
         ),
     );
 
