@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use Framework\Controllers\AbstractController;
 use Framework\Http\Response;
+use App\Models\Book;
 
 class BookController extends AbstractController
 {
@@ -17,8 +18,13 @@ class BookController extends AbstractController
     return $this->render('create-book.html.twig');
   }
 
-  public function store(): Response
+  public function store(): void
   {
-    dd($this->request);
+    $book = new Book;
+    $book->setTitle($this->request->getPostParams('title'));
+    $book->setBody($this->request->getPostParams('body'));
+    $book->save();
+
+    dd($book);
   }
 }

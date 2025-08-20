@@ -40,4 +40,9 @@ class Request
   {
     return $this->server['REQUEST_URI'];
   }
+
+  public function getPostParams(string $param): string
+  {
+    return $this->post[$param];
+  }
 }

@@ -51,7 +51,7 @@ class Kernel
     if ($controller instanceof AbstractController) {
       $controller->setRequest($request);
     }
-
+    // e.g. controller.show(1)
     return call_user_func_array([$controller, $method], $vars);
   }
 }
